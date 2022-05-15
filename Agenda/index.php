@@ -1,1 +1,1 @@
-<h1>Aqui será minha index</h1>
+<?php include "./Inc/Header.php";?>
