@@ -1,1 +1,1 @@
-<?php include "./Inc/Header.php";?>
+<?php include "./inc/Header.php";?>
