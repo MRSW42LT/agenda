@@ -7,7 +7,7 @@
     <title>Document</title>
 
     <!-- MDB -->
-    <link rel="stylesheet" href=".css/mdb.min.css" />
+    <link rel="stylesheet" href="./css/mdb.min.css" />
 </head>
 <body>
-    <div>teste</div>
+    <div class="text-center"><h2>teste</h2></div>
