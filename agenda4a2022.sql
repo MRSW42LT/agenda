@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 04-Maio-2022 às 13:29
+-- Generation Time: 01-Jun-2022 às 13:34
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.3
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `agenda4a`
+-- Database: `agenda4a2022`
 --
 
 -- --------------------------------------------------------
@@ -31,15 +31,16 @@ SET time_zone = "+00:00";
 CREATE TABLE `contatos` (
   `id` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL,
-  `ddd` varchar(10) NOT NULL,
-  `celular` varchar(50) NOT NULL,
+  `ddd` varchar(50) NOT NULL,
+  `celular` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `endereco` varchar(200) NOT NULL,
+  `endereco` varchar(100) NOT NULL,
   `profissao` varchar(100) NOT NULL,
   `formacao` varchar(100) NOT NULL,
-  `facebook` varchar(50) NOT NULL,
-  `instagram` varchar(50) NOT NULL,
-  `data_nasc` date NOT NULL
+  `facebook` varchar(200) NOT NULL,
+  `instagram` varchar(200) NOT NULL,
+  `data_nasc` varchar(100) NOT NULL,
+  `url_foto` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
