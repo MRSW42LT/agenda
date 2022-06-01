@@ -29,5 +29,12 @@ class Contatos{
         $sql = $this->con->conectar()->prepare("SELECT id FROM contatos WHERE email = :email");
         $sql->bindParam(':email, $email, PDO::PARAM_STR');
         $sql->execute();
+
+        if($sql->rowCount() > 0){
+            $array = $sql->fetch();
+        }else {
+            $array = array();
+        }
+        return $array;
     }
 }
