@@ -28,5 +28,6 @@ class Contatos{
     private function existeEmail($email){
         $sql = $this->con->conectar()->prepare("SELECT id FROM contatos WHERE email = :email");
         $sql->bindParam(':email, $email, PDO::PARAM_STR');
+        $sql->execute();
     }
 }
