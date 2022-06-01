@@ -1,27 +1,28 @@
-<?php // database connection factory
-    class Connection {
-        private $user;
-        private $password;
-        private $database;
-        private $server;
-        private static $pdo;
+<?php
+// Fábrica de conexão (conection factory)
+class Conexao {
+	private $usuario;
+	private $senha;
+	private $banco;
+	private $servidor;
 
-        public function __construct() {
-            $this->server   = "localhost";
-            $this->database = "agenda4a";
-            $this->user     = "root";
-            $this->password = "";
-        }
+	private static $pdo;
 
-        public function connect() {
-            try { // verify if there is problems in the connection
-                if(is_null(self::pdo)){
-                    self::$pdo = new PDO("mysql:host=".$this->server.";dbname=".$this->database, $this->user, $this->password);
-                }
-                return self::$pdo;
-
-            } catch (PDOException $ex) {
-                echo $ex->getMessage();
-            }
-        }
-    }
+	public function __construct(){
+		$this->servidor = "localhost";
+		$this->banco = "agenda4a2022";
+		$this->usuario = "root";
+		$this->senha = "root";
+	}
+	public function conectar(){
+		try{//Verifica se não há nenhum problema na conexão
+			if(is_null(self::$pdo)){
+				self::$pdo = new PDO("mysql:host=".$this->servidor.";dbname=".$this->banco, $this->usuario, $this->senha);
+				echo "Conectou!!";
+			}
+			return self::$pdo;
+		}catch (PDOException $ex){
+			echo $ex->getMessage();
+		}
+	}
+}
