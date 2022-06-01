@@ -37,4 +37,30 @@ class Contatos{
         }
         return $array;
     }
+
+    public function adicionar(
+    $email,
+    $nome,
+    $ddd,
+    $celular,
+    $endereco,
+    $profissao,
+    $formacao,
+    $facebook,
+    $instagram,
+    $data_nasc,
+    $url_foto){
+
+        $emailExistente = $this->existeEmail($email);
+        if (count($emailExistente) == 0){
+            try{
+                
+            }catch(PDOEXception $ex){
+                return 'Erro: ' .$ex->getMessage();
+            }
+        }else{
+            return FALSE;
+        }
+    }
+
 }
