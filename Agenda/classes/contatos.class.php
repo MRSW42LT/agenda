@@ -25,4 +25,7 @@ class Contatos{
 	public function __get($atributo){
 		return $this->atributo;
 	}
+    private function existeEmail($email){
+        $sql = $this->con->conectar()->prepare("SELECT id FROM contatos WHERE email = :email");
+    }
 }
