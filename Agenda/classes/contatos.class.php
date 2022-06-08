@@ -68,7 +68,18 @@ class Contatos{
                 $sql = $this->con->conectar()-prepare("INSERT INTO contatos(nome, ddd, id, celular, endereco, profissao, formacao, facebook, instagram, data_nasc, url_foto) 
                                                         VALUES (:nome, :ddd, :id, :celular, :endereco, :profissao, :formacao, :facebook, :instagram, :data_nasc, :url_foto)");
 
-                $sql->bindParam(":nome", $this->nome, PDO::PARAM_STR);                
+                $sql->bindParam(":nome", $this->nome, PDO::PARAM_STR);
+                $sql->bindParam(":ddd", $this->ddd, PDO::PARAM_STR);
+                $sql->bindParam(":celular", $this->celular, PDO::PARAM_STR);
+                $sql->bindParam(":email", $this->email, PDO::PARAM_STR);
+                $sql->bindParam(":endereco", $this->endereco, PDO::PARAM_STR);               
+                $sql->bindParam(":profissao", $this->profissao, PDO::PARAM_STR);               
+                $sql->bindParam(":formacao", $this->formacao, PDO::PARAM_STR);               
+                $sql->bindParam(":facebook", $this->facebook, PDO::PARAM_STR);               
+                $sql->bindParam(":instagram", $this->instagram, PDO::PARAM_STR);               
+                $sql->bindParam(":data_nasc", $this->data_nasc, PDO::PARAM_STR);               
+                $sql->bindParam(":url_foto", $this->url_foto, PDO::PARAM_STR);     
+
 
             }catch(PDOEXception $ex){
                 return 'Erro: ' .$ex->getMessage();
