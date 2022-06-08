@@ -53,8 +53,19 @@ class Contatos{
 
         $emailExistente = $this->existeEmail($email);
         if (count($emailExistente) == 0){
-            try{
-                
+            try{    
+                $this->email = $email;
+                $this->nome = $nome;
+                $this->ddd = $ddd;
+                $this->celular = $celular;
+                $this->endereco =  $endereco;
+                $this->profissao = $profissao;
+                $this->formacao =  $formacao;
+                $this->facebook =  $facebook;
+                $this->instagram =  $instagram;
+                $this->data_nasc = $data_nasc;
+                $this->url_foto = $url_foto;
+                $sql = $this->con->conectar()-prepare("INSERT INTO contatos(nome, ddd, id, celular, endereco, profissao, formacao, facebook, instagram, data_nasc, url_foto) VALUES (:nome, :ddd, :id, :celular, :endereco, :profissao, :formacao, :facebook, :instagram, :data_nasc, :url_foto)");
             }catch(PDOEXception $ex){
                 return 'Erro: ' .$ex->getMessage();
             }
