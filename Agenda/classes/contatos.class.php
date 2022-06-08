@@ -65,7 +65,11 @@ class Contatos{
                 $this->instagram =  $instagram;
                 $this->data_nasc = $data_nasc;
                 $this->url_foto = $url_foto;
-                $sql = $this->con->conectar()-prepare("INSERT INTO contatos(nome, ddd, id, celular, endereco, profissao, formacao, facebook, instagram, data_nasc, url_foto) VALUES (:nome, :ddd, :id, :celular, :endereco, :profissao, :formacao, :facebook, :instagram, :data_nasc, :url_foto)");
+                $sql = $this->con->conectar()-prepare("INSERT INTO contatos(nome, ddd, id, celular, endereco, profissao, formacao, facebook, instagram, data_nasc, url_foto) 
+                                                        VALUES (:nome, :ddd, :id, :celular, :endereco, :profissao, :formacao, :facebook, :instagram, :data_nasc, :url_foto)");
+
+                $sql->bindParam(":nome", $this->nome, PDO::PARAM_STR);                
+
             }catch(PDOEXception $ex){
                 return 'Erro: ' .$ex->getMessage();
             }
