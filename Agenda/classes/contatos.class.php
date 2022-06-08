@@ -80,6 +80,8 @@ class Contatos{
                 $sql->bindParam(":data_nasc", $this->data_nasc, PDO::PARAM_STR);               
                 $sql->bindParam(":url_foto", $this->url_foto, PDO::PARAM_STR);     
 
+                $sql->execute();
+                return TRUE;
 
             }catch(PDOEXception $ex){
                 return 'Erro: ' .$ex->getMessage();
