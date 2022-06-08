@@ -8,6 +8,7 @@
 
     <!-- MDB -->
     <link rel="stylesheet" href="Agenda/css/mdb.min.css" />
+    <link rel="stylesheet" href="css/mdb.min.css" />
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
@@ -56,4 +57,3 @@
     </div>
   </div>
 </nav>
-    <div class="text-center"><h2>teste</h2></div>
